@@ -1,0 +1,17 @@
+###利子の支払い
+
+##Terry は Mercedes-Benz で高級車をローンで購入しました。月々のローン initialLoan と期限内にお金を払ったか払っていないかを表すブール値 didPayOnTime が与えられるので、$2.5 の手数料とローンの利子を請求する、interestsPaid という関数を作成してください。期限内にお金が支払われなかった場合、15% の利子となり、支払われた場合は 2% の利子が請求されます。
+
+def interestsPaid(initialLoan,didPayOnTime):
+    # 関数を完成させてください
+    percentLate = 1.15
+    percentDefault = 1.02
+    serviceFee = 2.5
+    total = initialLoan
+    
+    if didPayOnTime: total = total * percentDefault
+    else: total = total * percentLate
+
+    return total + serviceFee
+
+# print(interestsPaid(100, True))
